@@ -1,3 +1,5 @@
+(function(){
+
 var idCounter = 1;
 
 Task = function(description) {
@@ -39,6 +41,8 @@ List.prototype.get = function(index) {
 List.prototype.complete = function(index) {
   this.list[index].completed = true;
 }
+
+})();
 
 // Driver code
 
