@@ -1,13 +1,10 @@
-(function(){
-
-var idCounter = 1;
-
 Task = function(description) {
-  this.id = idCounter
+  this.id = Task.idCounter++;
   this.description = description;
   this.completed = false;
-  idCounter++
 }
+
+Task.idCounter = 1;
 
 List = function(name) {
   this.name = name;
@@ -41,8 +38,6 @@ List.prototype.get = function(index) {
 List.prototype.complete = function(index) {
   this.list[index].completed = true;
 }
-
-})();
 
 // Driver code
 
