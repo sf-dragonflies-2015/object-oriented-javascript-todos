@@ -8,11 +8,11 @@ var Task = function(options){
   this.id = options.id;
   this.description = options.description;
   this.completed = false;
-}
+};
 
 Task.prototype.complete = function(){
-
-}
+  this.completed = true;
+};
 
 TodoList.prototype.add = function(description) {
   this.tasks.push(new Task({id:this.tasks.length+1, description: description}));
@@ -51,5 +51,7 @@ groceryList.add('milk');
 console.log(groceryList.tasks);
 groceryList.list();
 var breadTask = groceryList.tasks[0];
-groceryList.remove(breadTask);
+breadTask.complete();
+console.log(breadTask);
+// groceryList.remove(breadTask);
 
