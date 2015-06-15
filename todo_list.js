@@ -1,37 +1,56 @@
-var newTodoList = function() {
+var TodoList = function() {
 
   todoList = {
 
     add: function(item) {
-      var Task = {id: this.tasks.length+1, description: item, completed: false};
-      this.tasks.push(Task);
+      task = new Task({id: this.tasks.length+1, description: item});
+      this.tasks.push(task);
     },
 
     tasks: [],
 
     list: function() {
       for (index=0;index<this.tasks.length;index++) {
-        console.log('Task' + this.tasks[index]);
+        console.log(this.tasks[index]);
       }
     },
 
+    remove: function(item) {
+      for (index = 0; index < this.tasks.length; index ++) {
+        if (item.id == index){
+          this.tasks.splice(index,1);
+        }
+      }
+    }
+
   };
+
 
   return todoList;
 };
 
+var Task = function(options) {
+  if (!options) options = {};
+  this.id = options.id;
+  this.description = options.description;
+  this.completed = false;
+}
+
+Task.prototype.complete = function(){
+  this.completed = true;
+}
 
 
 // Driver code
 
 
-var groceryList = newTodoList();
+var groceryList = new TodoList();
 groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
 
 // tasks is now an array of Task objects
-groceryList.tasks //-> [Task, Task, Task]
+console.log(groceryList.tasks) //-> [Task, Task, Task]
 
 groceryList.list();
 //> Task {id: 1, description: 'bread', completed: false}
@@ -41,7 +60,6 @@ groceryList.list();
 
 // getting a task object
 var breadTask = groceryList.tasks[0];
-console.log(breadTask)
 breadTask.id //-> 1 (some unique numerical ID)
 breadTask.description //-> 'bread'
 breadTask.completed //-> false
