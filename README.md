@@ -1,14 +1,14 @@
 # Object Oriented JavaScript Todos
 
- 
-## Learning Competencies 
+
+## Learning Competencies
 
 * Write a constructor that creates a `new TodoList` and `new Task` using JavaScript constructors and prototypical inheritance.
 * Implement an API in plain JavaScript
 
-## Summary 
+## Summary
 
-This challenge should be done entierly in the JavaScript console within the chrome developer tools. 
+This challenge should be done entierly in the JavaScript console within the chrome developer tools.
 
 This is part two of the [JavaScript Todos challenge](../javascript-todos)
 
@@ -19,7 +19,7 @@ This challenge is designed to introduce you to JavaScript the language before we
 
 ```js
 // Note we are using a JavaScript constructor now.
-var groceryList = new TodoList();
+var groceryList = newTodoList();
 groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
