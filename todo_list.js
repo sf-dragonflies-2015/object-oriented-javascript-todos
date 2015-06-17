@@ -1,5 +1,6 @@
 
 
+
 var Item = function(description, id) {
   this.description = description;
   this.id = id
@@ -22,12 +23,13 @@ function TodoList() {
   };
 
   TodoList.prototype.remove = function(index) {
-    this.tasks.slice(index, 1)
+    this.tasks.slice((index.id), 2)
   };
+
 
   TodoList.prototype.list = function() {
      for (var i = 0; i < this.tasks.length; i++) {
-      console.log(this.tasks[i].id + ". " + this.tasks[i].description + ": " + this.tasks[i].completed);
+      console.log(this.tasks[i]);
     };
   };
 
